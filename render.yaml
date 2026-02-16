@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: incluscores-backend
+    env: python
+    plan: free
+    runtime: python-3.11
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && gunicorn main:app --worker-class uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHONUNBUFFERED
+        value: true
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
