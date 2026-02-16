@@ -379,15 +379,6 @@ npm test
 
 ---
 
-## 📞 Support & Contact
-
-For issues, questions, or contributions:
-- **Issues**: GitHub Issues
-- **Email**: support@incluscores.io
-- **Documentation**: See [Documentation](#documentation) section
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
