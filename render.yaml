@@ -4,8 +4,9 @@ services:
     env: python
     plan: free
     runtime: python-3.11
-    buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "cd backend && gunicorn main:app --worker-class uvicorn.workers.UvicornWorker"
+    root: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn main:app --worker-class uvicorn.workers.UvicornWorker --workers 4 --bind 0.0.0.0:$PORT --timeout 120"
     envVars:
       - key: PORT
         value: 8000
