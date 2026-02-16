@@ -2,7 +2,7 @@
 
 > **Dynamic Credit Scoring & Guidance System** with Role-Based Access Control, Real-Time Data Processing, and Professional Dashboards
 
-![Status](https://img.shields.io/badge/Status-Production%20Ready-green)
+
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-16%2B-green)
 ![React](https://img.shields.io/badge/React-18%2B-61DAFB?logo=react)
@@ -70,6 +70,33 @@
 
 ## 🏗️ Architecture
 
+### System Architecture Diagram
+
+![IncluScore System Architecture](./architecture%20diagram/System_Architecture.png)
+
+### Architecture Overview
+
+The IncluScore system follows a comprehensive three-tier architecture:
+
+**1. Frontend Layer (React)**
+   - Browser-based interface for different user roles
+   - Real-time data visualization and dashboards
+   - Secure Clerk-based authentication
+   - Responsive UI with Material-UI components
+
+**2. Backend Layer (FastAPI)**
+   - RESTful API endpoints for all operations
+   - PostgreSQL database integration via Supabase
+   - ML-powered credit scoring engine
+   - Explainable AI for model transparency
+   - Role-based access control enforcement
+
+**3. Data Layer (PostgreSQL / Supabase)**
+   - Secure multi-tenant database design
+   - Real-time data synchronization
+   - Audit logging for compliance
+   - Connection pooling for performance
+
 ### Frontend Architecture
 ```
 frontend/
@@ -99,6 +126,16 @@ backend/
 - **Beneficiaries**: Borrower profiles and data
 - **Scores**: Score history and tracking
 - **Audit Logs**: System activity tracking
+
+### Data Flow
+
+1. **User Authentication**: Client authenticates via Clerk, receives JWT token
+2. **API Request**: Frontend sends authenticated request to FastAPI backend
+3. **Authorization**: Backend validates role and permissions
+4. **Database Query**: Backend queries PostgreSQL via Supabase connection pool
+5. **Processing**: ML model processes data and generates credit scores
+6. **Response**: Backend returns results with explanations via API
+7. **Display**: Frontend renders data in role-specific dashboard
 
 ---
 
@@ -412,7 +449,7 @@ Contributions are welcome! Please follow these steps:
 
 ## ✨ Acknowledgments
 
-Built with ❤️ using FastAPI, React, and PostgreSQL.
+Built with ❤️ using FastAPI, React, and PostgreSQL by Team Eureka Fourge.
 
 ---
 
